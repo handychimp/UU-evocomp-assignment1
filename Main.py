@@ -76,7 +76,7 @@ def Minimum_Population_UX_Parallel(**kwargs):
     UX_success_counter = 0
     pop_size = 10
     UX_results = []
-    while UX_success_counter < 24 and pop_size <= 10:
+    while UX_success_counter < 24 and pop_size <= 1280:
         print(pop_size,flush=True)
         Trial_results = []
         UX_success_counter = 0
@@ -181,7 +181,7 @@ def Minimum_Population_2X_Parallel(**kwargs):
     pop_size = 10
     TWOX_results = []
     #seeds = np.random.randint(10000,size=(25))
-    while TWOX_success_counter < 24 and pop_size <= 10:
+    while TWOX_success_counter < 24 and pop_size <= 1280:
         print(pop_size,flush=True)
         Trial_results = []
         TWOX_success_counter = 0
