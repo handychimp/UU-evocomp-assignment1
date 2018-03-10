@@ -7,6 +7,9 @@ Created on Wed Feb 28 15:16:56 2018
 import numpy as np
 import random
 from operator import itemgetter
+import os
+import multiprocessing as mp
+import time
 
 #1. Define fitness functions
 def fitness( x, trap = False , random_linked = False, k = 4, d = 1.0 ):
@@ -101,9 +104,11 @@ def selection(parent_pop,child_pop,continue_algorithm,selection_function):
         
     return new_pop
 
-def Experiment_UX(pop_size,string_length,epochs=100000,**kwargs):
+def Experiment_UX(seed,pop_size,string_length=100,epochs=1000,**kwargs):
     #Generate Population and Initialise vars
-    pop = np.random.randint(2,size=(pop_size,string_length))
+    print('Experiment_UX started...' + str(seed),flush=True)
+    local_state = np.random.mtrand.RandomState(seed)
+    pop = local_state.randint(2,size=(pop_size,string_length))
     pop_log = []
     continue_algorithm = True
     identical_gen_count = 0
@@ -137,13 +142,17 @@ def Experiment_UX(pop_size,string_length,epochs=100000,**kwargs):
             pop = next_pop
             generation +=1
             identical_gen_count = 0
+        
+    print('Experiment_UX started...Trial fitness:' + str(pop_log[len(pop_log)-1][2]),flush=True)
     return pop_log
         
 
 
-def Experiment_2X(pop_size,string_length,epochs=100000,**kwargs):
+def Experiment_2X(seed,pop_size,string_length,epochs=1000,**kwargs):
     #Generate Population and Initialise vars
-    pop = np.random.randint(2,size=(pop_size,string_length))
+    print('Experiment_UX started...' + str(seed),flush=True)
+    local_state = np.random.mtrand.RandomState(seed)
+    pop = local_state.randint(2,size=(pop_size,string_length))
     pop_log = []
     continue_algorithm = True
     generation = 0
@@ -172,5 +181,5 @@ def Experiment_2X(pop_size,string_length,epochs=100000,**kwargs):
         else:    
             pop = next_pop
             generation +=1
-        
+        print ('Trial fitness: ' + str(pop_log[len(pop_log)-1][2]))
     return pop_log
