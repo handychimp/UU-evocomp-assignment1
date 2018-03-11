@@ -74,7 +74,7 @@ def family_competition(parents,children,continue_algorithm):
             continue_algorithm=True
     
     selection_check1 = set([i for i, x in enumerate(family[0]) if x == 0])
-    selection_check2 = [i for i, x in enumerate(family[0]) if x == 0 and i in selection_check1]        
+    selection_check2 = [i for i, x in enumerate(family[1]) if x == 0 and i in selection_check1]        
     
     for i in selection_check2:
         if parents[0][i] == 1 or parents[1][i] == 1:

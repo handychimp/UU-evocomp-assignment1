@@ -46,7 +46,7 @@ def Minimum_Population_UX_Parallel(**kwargs):
         UX_results.append((pop_size,Trial_results))
         
         for i in range (0,len(Trial_results)):
-            if int(Trial_results[i][0][len(Trial_results[i])-1][2])==100:
+            if int(Trial_results[i][0][len(Trial_results[i][0])-1][2])==100:
                 UX_success_counter += 1
         print('Successes: ' + str(UX_success_counter) + ' out of 25')
         
@@ -72,7 +72,7 @@ def Minimum_Population_UX_Parallel(**kwargs):
             UX_results.append((pop_size,Trial_results))
         
             for i in range (0,len(Trial_results)):
-                if Trial_results[i][0][len(Trial_results[i])-1][2]==100:
+                if Trial_results[i][0][len(Trial_results[i][0])-1][2]==100:
                     UX_success_counter += 1
             print('Successes: ' + str(UX_success_counter) + ' out of 25')
             if UX_success_counter >= 24:
@@ -105,7 +105,7 @@ def Minimum_Population_2X_Parallel(**kwargs):
         TWOX_results.append((pop_size,Trial_results))
         
         for i in range (0,len(Trial_results)):
-            if Trial_results[i][0][len(Trial_results[i])-1][2]==100:
+            if Trial_results[i][0][len(Trial_results[i][0])-1][2]==100:
                 TWOX_success_counter += 1
         print('Successes: ' + str(TWOX_success_counter) + ' out of 25')
         
@@ -131,7 +131,7 @@ def Minimum_Population_2X_Parallel(**kwargs):
             TWOX_results.append((pop_size,Trial_results))
             
             for i in range (0,len(Trial_results)):
-                if Trial_results[i][0][len(Trial_results[i])-1][2]==100:
+                if Trial_results[i][0][len(Trial_results[i][0])-1][2]==100:
                     TWOX_success_counter += 1
             print('Successes: ' + str(TWOX_success_counter) + ' out of 25')  
             if TWOX_success_counter >= 24:
@@ -173,7 +173,6 @@ if __name__ == '__main__':
 #    Results_CountOnes_UX = Minimum_Population_UX_Parallel()
 #    with open('CountOnes_UX','wb') as fp:
 #        pickle.dump(Results_CountOnes_UX,fp)
-#        
 #    Results_CountOnes_2X = Minimum_Population_2X_Parallel()
 #    with open('CountOnes_2X','wb') as fp:
 #        pickle.dump(Results_CountOnes_2X,fp)
@@ -185,30 +184,30 @@ if __name__ == '__main__':
 #    Results_DecepTrap_2X = Minimum_Population_2X_Parallel(trap=True)
 #    with open('Deceptive_2X','wb') as fp:
 #        pickle.dump(Results_DecepTrap_2X,fp)
-#    
-#    Results_NonDecepTrap_UX = Minimum_Population_UX_Parallel(trap=True,d=2.5)
-#    with open('NonDeceptive_UX','wb') as fp:
-#        pickle.dump(Results_NonDecepTrap_UX,fp)
-#    
-#    Results_NonDecepTrap_2X = Minimum_Population_2X_Parallel(trap=True,d=2.5)
-#    with open('NonDeceptive_UX','wb') as fp:
-#        pickle.dump(Results_NonDecepTrap_2X,fp)
-#    
-#    Results_Random_Deceptive_Trap_UX = Minimum_Population_UX_Parallel(trap=True,random_linked=True)
-#    with open('Random_Deceptive_UX','wb') as fp:
-#        pickle.dump(Results_Random_Deceptive_Trap_UX,fp)
-#    
-#    Results_Random_Deceptive_Trap_2X = Minimum_Population_2X_Parallel(trap=True,random_linked=True)
-#    with open('Random_Deceptive_2X','wb') as fp:
-#        pickle.dump(Results_Random_Deceptive_Trap_2X,fp)   
-#    
-#    Results_Random_NonDeceptive_Trap_UX = Minimum_Population_UX_Parallel(trap=True,random_linked=True,d=2.5)
-#    with open('Random_NonDeceptive_UX','wb') as fp:
-#        pickle.dump(Results_Random_NonDeceptive_Trap_UX,fp) 
-#        
-#    Results_Random_NonDeceptive_Trap_2X = Minimum_Population_2X_Parallel(trap=True,random_linked=True,d=2.5)
-#    with open('Random_NonDeceptive_2X','wb') as fp:
-#        pickle.dump(Results_Random_NonDeceptive_Trap_2X,fp) 
+    
+    Results_NonDecepTrap_UX = Minimum_Population_UX_Parallel(trap=True,d=2.5)
+    with open('NonDeceptive_UX','wb') as fp:
+        pickle.dump(Results_NonDecepTrap_UX,fp)
+    
+    Results_NonDecepTrap_2X = Minimum_Population_2X_Parallel(trap=True,d=2.5)
+    with open('NonDeceptive_2X','wb') as fp:
+        pickle.dump(Results_NonDecepTrap_2X,fp)
+    
+    Results_Random_Deceptive_Trap_UX = Minimum_Population_UX_Parallel(trap=True,random_linked=True)
+    with open('Random_Deceptive_UX','wb') as fp:
+        pickle.dump(Results_Random_Deceptive_Trap_UX,fp)
+    
+    Results_Random_Deceptive_Trap_2X = Minimum_Population_2X_Parallel(trap=True,random_linked=True)
+    with open('Random_Deceptive_2X','wb') as fp:
+        pickle.dump(Results_Random_Deceptive_Trap_2X,fp)   
+    
+    Results_Random_NonDeceptive_Trap_UX = Minimum_Population_UX_Parallel(trap=True,random_linked=True,d=2.5)
+    with open('Random_NonDeceptive_UX','wb') as fp:
+        pickle.dump(Results_Random_NonDeceptive_Trap_UX,fp) 
+        
+    Results_Random_NonDeceptive_Trap_2X = Minimum_Population_2X_Parallel(trap=True,random_linked=True,d=2.5)
+    with open('Random_NonDeceptive_2X','wb') as fp:
+        pickle.dump(Results_Random_NonDeceptive_Trap_2X,fp) 
         
     p=Pool()
     Fitness_results=p.map(Fitness_Experiment,range(0,10))
