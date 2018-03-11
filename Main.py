@@ -170,45 +170,45 @@ def Fitness_Experiment(x):
 if __name__ == '__main__':
     __spec__ = "ModuleSpec(name='builtins', loader=<class '_frozen_importlib.BuiltinImporter'>)"
         
-    Results_CountOnes_UX = Minimum_Population_UX_Parallel()
-    with open('CountOnes_UX','wb') as fp:
-        pickle.dump(Results_CountOnes_UX,fp)
-        
-    Results_CountOnes_2X = Minimum_Population_2X_Parallel()
-    with open('CountOnes_2X','wb') as fp:
-        pickle.dump(Results_CountOnes_2X,fp)
-    
-    Results_DecepTrap_UX = Minimum_Population_UX_Parallel(trap=True)
-    with open('Deceptive_UX','wb') as fp:
-        pickle.dump(Results_DecepTrap_UX,fp)
-    
-    Results_DecepTrap_2X = Minimum_Population_2X_Parallel(trap=True)
-    with open('Deceptive_2X','wb') as fp:
-        pickle.dump(Results_DecepTrap_2X,fp)
-    
-    Results_NonDecepTrap_UX = Minimum_Population_UX_Parallel(trap=True,d=2.5)
-    with open('NonDeceptive_UX','wb') as fp:
-        pickle.dump(Results_NonDecepTrap_UX,fp)
-    
-    Results_NonDecepTrap_2X = Minimum_Population_2X_Parallel(trap=True,d=2.5)
-    with open('NonDeceptive_UX','wb') as fp:
-        pickle.dump(Results_NonDecepTrap_2X,fp)
-    
-    Results_Random_Deceptive_Trap_UX = Minimum_Population_UX_Parallel(trap=True,random_linked=True)
-    with open('Random_Deceptive_UX','wb') as fp:
-        pickle.dump(Results_Random_Deceptive_Trap_UX,fp)
-    
-    Results_Random_Deceptive_Trap_2X = Minimum_Population_2X_Parallel(trap=True,random_linked=True)
-    with open('Random_Deceptive_2X','wb') as fp:
-        pickle.dump(Results_Random_Deceptive_Trap_2X,fp)   
-    
-    Results_Random_NonDeceptive_Trap_UX = Minimum_Population_UX_Parallel(trap=True,random_linked=True,d=2.5)
-    with open('Random_NonDeceptive_UX','wb') as fp:
-        pickle.dump(Results_Random_NonDeceptive_Trap_UX,fp) 
-        
-    Results_Random_NonDeceptive_Trap_2X = Minimum_Population_2X_Parallel(trap=True,random_linked=True,d=2.5)
-    with open('Random_NonDeceptive_2X','wb') as fp:
-        pickle.dump(Results_Random_NonDeceptive_Trap_2X,fp) 
+#    Results_CountOnes_UX = Minimum_Population_UX_Parallel()
+#    with open('CountOnes_UX','wb') as fp:
+#        pickle.dump(Results_CountOnes_UX,fp)
+#        
+#    Results_CountOnes_2X = Minimum_Population_2X_Parallel()
+#    with open('CountOnes_2X','wb') as fp:
+#        pickle.dump(Results_CountOnes_2X,fp)
+#    
+#    Results_DecepTrap_UX = Minimum_Population_UX_Parallel(trap=True)
+#    with open('Deceptive_UX','wb') as fp:
+#        pickle.dump(Results_DecepTrap_UX,fp)
+#    
+#    Results_DecepTrap_2X = Minimum_Population_2X_Parallel(trap=True)
+#    with open('Deceptive_2X','wb') as fp:
+#        pickle.dump(Results_DecepTrap_2X,fp)
+#    
+#    Results_NonDecepTrap_UX = Minimum_Population_UX_Parallel(trap=True,d=2.5)
+#    with open('NonDeceptive_UX','wb') as fp:
+#        pickle.dump(Results_NonDecepTrap_UX,fp)
+#    
+#    Results_NonDecepTrap_2X = Minimum_Population_2X_Parallel(trap=True,d=2.5)
+#    with open('NonDeceptive_UX','wb') as fp:
+#        pickle.dump(Results_NonDecepTrap_2X,fp)
+#    
+#    Results_Random_Deceptive_Trap_UX = Minimum_Population_UX_Parallel(trap=True,random_linked=True)
+#    with open('Random_Deceptive_UX','wb') as fp:
+#        pickle.dump(Results_Random_Deceptive_Trap_UX,fp)
+#    
+#    Results_Random_Deceptive_Trap_2X = Minimum_Population_2X_Parallel(trap=True,random_linked=True)
+#    with open('Random_Deceptive_2X','wb') as fp:
+#        pickle.dump(Results_Random_Deceptive_Trap_2X,fp)   
+#    
+#    Results_Random_NonDeceptive_Trap_UX = Minimum_Population_UX_Parallel(trap=True,random_linked=True,d=2.5)
+#    with open('Random_NonDeceptive_UX','wb') as fp:
+#        pickle.dump(Results_Random_NonDeceptive_Trap_UX,fp) 
+#        
+#    Results_Random_NonDeceptive_Trap_2X = Minimum_Population_2X_Parallel(trap=True,random_linked=True,d=2.5)
+#    with open('Random_NonDeceptive_2X','wb') as fp:
+#        pickle.dump(Results_Random_NonDeceptive_Trap_2X,fp) 
         
     p=Pool()
     Fitness_results=p.map(Fitness_Experiment,range(0,10))
